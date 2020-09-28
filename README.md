@@ -6,9 +6,14 @@
 > 하는방법은 나무위키의 https://namu.wiki/w/%EC%9A%94%ED%8A%B8(%EA%B2%8C%EC%9E%84)?from=Yacht%20Dice 2.2항목에 설명이 되어있습니다.
 ------------
 ### 실행 설명
+
 1. 로컬 파일로 실행방법
+
     + ```$ npm start or $ yarn start```
+    
 2. 도메인으로 실행방법
+
     + http://yacht.kro.kr/
+    
 ------------
 ### 
