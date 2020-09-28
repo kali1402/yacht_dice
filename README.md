@@ -7,8 +7,8 @@
 ------------
 ### 실행 설명
 1. 로컬 파일로 실행방법
-  + ```$ npm start or $ yarn start```
+    + ```$ npm start or $ yarn start```
 2. 도메인으로 실행방법
-  + http://yacht.kro.kr/
+    + http://yacht.kro.kr/
 ------------
 ### 
