@@ -1,0 +1,79 @@
+* {
+    background-color: rgba(230, 228, 213);
+    font-size: 15px;
+  }
+
+  .setdice1,
+  .setdice2 {
+    padding: 30px;
+  }
+
+  .result,
+  .dice {
+    padding: 30px;
+    font-size: 20px;
+    font-weight: 1000;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  .subtotal {
+    background-color: rgba(166, 168, 165);
+  }
+
+  .subtotalinput {
+    border: none;
+    background-color: rgba(166, 168, 165);
+    color: white;
+    text-align: right;
+  }
+
+  input {
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    outline: none;
+  }
+
+  .dbc1,
+  .dbc2 {
+    font-weight: 1000;
+  }
+
+  .bc1,
+  .bc2 {
+    width: 100%;
+    background-color: rgba(255, 253, 96);
+    font-weight: 1000;
+  }
+
+  .turn {
+    text-align: center;
+  }
+
+  .player {
+    text-align: center;
+  }
+
+  .totalbc1,
+  .totalbc2 {
+    font-weight: 1000;
+  }
+
+  #confirmation,
+  #start {
+    border: 2px solid gray;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  #confirmation:hover,
+  #start:hover {
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: ivory;
+    cursor: pointer;
+  }

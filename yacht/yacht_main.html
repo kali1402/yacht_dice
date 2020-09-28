@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>야추다이스</title>
+  <link rel="stylesheet" type="text/css" href="./yacht_css.css">
+</head>
+
+<body style="margin: 50px;">
+  <table border="1" style="float: left; margin-right: 100px;">
+    <tr>
+      <td class="turn">
+        Turn<br /><input id="turn" value="1/12" disabled />
+      </td>
+      <td rowspan="2" id="player1" class="player">player1</td>
+      <td rowspan="2" id="player2" class="player">player2</td>
+    </tr>
+    <tr>
+      <th>Categories</td>
+    </tr>
+    <tr>
+      <td>1 Aces</td>
+      <td>
+        <input type="button" id="player1aces" class="bc1" value="0" onclick="end(`aces`);" onmouseover="movein(`aces`);"
+          onmouseout="moveout(`aces`);" />
+        <input type="text" id="player1acesresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player2aces" class="bc2" value="0" onclick="end(`aces`);" onmouseover="movein(`aces`);"
+          onmouseout="moveout(`aces`);" style="display: none;" />
+        <input type="text" id="player2acesresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>2 Deuces</td>
+      <td>
+        <input type="button" id="player1deuces" class="bc1" value="0" onclick="end(`deuces`);"
+          onmouseover="movein(`deuces`);" onmouseout="moveout(`deuces`);" />
+        <input type="text" id="player1deucesresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player2deuces" class="bc2" value="0" onclick="end(`deuces`);"
+          onmouseover="movein(`deuces`);" onmouseout="moveout(`deuces`);" style="display: none;" />
+        <input type="text" id="player2deucesresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>3 Threes</td>
+      <td>
+        <input type="button" id="player1threes" class="bc1" value="0" onclick="end(`threes`);"
+          onmouseover="movein(`threes`);" onmouseout="moveout(`threes`);" />
+        <input type="text" id="player1threesresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player2threes" class="bc2" value="0" onclick="end(`threes`);"
+          onmouseover="movein(`threes`);" onmouseout="moveout(`threes`);" style="display: none;" />
+        <input type="text" id="player2threesresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>4 Fours</td>
+      <td>
+        <input type="button" id="player1fours" class="bc1" value="0" onclick="end(`fours`);"
+          onmouseover="movein(`fours`);" onmouseout="moveout(`fours`);" />
+        <input type="text" id="player1foursresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player2fours" class="bc2" value="0" onclick="end(`fours`);"
+          onmouseover="movein(`fours`);" onmouseout="moveout(`fours`);" style="display: none;" />
+        <input type="text" id="player2foursresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>5 Fives</td>
+      <td>
+        <input type="button" id="player1fives" class="bc1" value="0" onclick="end(`fives`);"
+          onmouseover="movein(`fives`);" onmouseout="moveout(`fives`);" />
+        <input type="text" id="player1fivesresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player2fives" class="bc2" value="0" onclick="end(`fives`);"
+          onmouseover="movein(`fives`);" onmouseout="moveout(`fives`);" style="display: none;" />
+        <input type="text" id="player2fivesresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>6 Sixes</td>
+      <td>
+        <input type="button" id="player1sixes" class="bc1" value="0" onclick="end(`sixes`);"
+          onmouseover="movein(`sixes`);" onmouseout="moveout(`sixes`);" />
+        <input type="text" id="player1sixesresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player2sixes" class="bc2" value="0" onclick="end(`sixes`);"
+          onmouseover="movein(`sixes`);" onmouseout="moveout(`sixes`);" style="display: none;" />
+        <input type="text" id="player2sixesresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <th style="background-color:rgba(62, 65, 62); color: white;">subtotal</td>
+      <td class="subtotal"><input type="text" class="subtotalinput" id="player1result" value="0/63" disabled /></td>
+      <td class="subtotal"><input type="text" class="subtotalinput" id="player2result" value="0/63" disabled /></td>
+    </tr>
+    <tr>
+      <th style="background-color:rgba(62, 65, 62); color: white;">+35 Bonus</td>
+      <td class="subtotal"><input type="text" class="subtotalinput" id="player1bonus" disabled /></td>
+      <td class="subtotal"><input type="text" class="subtotalinput" id="player2bonus" disabled /></td>
+    </tr>
+
+    <tr>
+      <td>Choice</td>
+      <td>
+        <input type="button" id="player1choice" class="bc1" value="0" onclick="end(`choice`);"
+          onmouseover="movein(`choice`);" onmouseout="moveout(`choice`);" />
+        <input type="text" id="player1choiceresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player2choice" class="bc2" value="0" onclick="end(`choice`);"
+          onmouseover="movein(`choice`);" onmouseout="moveout(`choice`);" style="display: none;" />
+        <input type="text" id="player2choiceresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>4 of a Kind</td>
+      <td>
+        <input type="button" id="player14ofakind" class="bc1" value="0" onclick="end(`4ofakind`);"
+          onmouseover="movein(`4ofakind`);" onmouseout="moveout(`4ofakind`);" />
+        <input type="text" id="player14ofakindresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player24ofakind" class="bc2" value="0" onclick="end(`4ofakind`);"
+          onmouseover="movein(`4ofakind`);" onmouseout="moveout(`4ofakind`);" style="display: none;" />
+        <input type="text" id="player24ofakindresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>Full House</td>
+      <td>
+        <input type="button" id="player1fullhouse" class="bc1" value="0" onclick="end(`fullhouse`);"
+          onmouseover="movein(`fullhouse`);" onmouseout="moveout(`fullhouse`);" />
+        <input type="text" id="player1fullhouseresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player2fullhouse" class="bc2" value="0" onclick="end(`fullhouse`);"
+          onmouseover="movein(`fullhouse`);" onmouseout="moveout(`fullhouse`);" style="display: none;" />
+        <input type="text" id="player2fullhouseresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>S. Straight</td>
+      <td>
+        <input type="button" id="player1sstraight" class="bc1" value="0" onclick="end(`sstraight`);"
+          onmouseover="movein(`sstraight`);" onmouseout="moveout(`sstraight`);" />
+        <input type="text" id="player1sstraightresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player2sstraight" class="bc2" value="0" onclick="end(`sstraight`);"
+          onmouseover="movein(`sstraight`);" onmouseout="moveout(`sstraight`);" style="display: none;" />
+        <input type="text" id="player2sstraightresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>L. Straight</td>
+      <td>
+        <input type="button" id="player1lstraight" class="bc1" value="0" onclick="end(`lstraight`);"
+          onmouseover="movein(`lstraight`);" onmouseout="moveout(`lstraight`);" />
+        <input type="text" id="player1lstraightresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player2lstraight" class="bc2" value="0" onclick="end(`lstraight`);"
+          onmouseover="movein(`lstraight`);" onmouseout="moveout(`lstraight`);" style="display: none;" />
+        <input type="text" id="player2lstraightresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <td>Yacht</td>
+      <td>
+        <input type="button" id="player1yacht" class="bc1" value="0" onclick="end(`yacht`);"
+          onmouseover="movein(`yacht`);" onmouseout="moveout(`yacht`);" />
+        <input type="text" id="player1yachtresult" class="dbc1" value="0" style="display: none;" disabled />
+      </td>
+      <td>
+        <input type="button" id="player2yacht" class="bc2" value="0" onclick="end(`yacht`);"
+          onmouseover="movein(`yacht`);" onmouseout="moveout(`yacht`);" style="display: none;" />
+        <input type="text" id="player2yachtresult" class="dbc2" value="0" style="display: none;" disabled />
+      </td>
+    </tr>
+    <tr>
+      <th>Total</td>
+      <td><input type="text" class="totalbc1" id="player1total" value="0" disabled /></td>
+      <td><input type="text" class="totalbc2" id="player2total" value="0" disabled /></td>
+    </tr>
+  </table>
+  <input id="chance" disabled />
+  <table border="1" style="text-align: center;">
+    <tr>
+      <td>/</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td style="padding: 30px;">keep</td>
+      <td class="setdice1"><input type="button" class="result" id="result1" style="display: none;"
+          onclick="backdice(1)" /></td>
+      <td class="setdice1"><input type="button" class="result" id="result2" style="display: none;"
+          onclick="backdice(2)" /></td>
+      <td class="setdice1"><input type="button" class="result" id="result3" style="display: none;"
+          onclick="backdice(3)" /></td>
+      <td class="setdice1"><input type="button" class="result" id="result4" style="display: none;"
+          onclick="backdice(4)" /></td>
+      <td class="setdice1"><input type="button" class="result" id="result5" style="display: none;"
+          onclick="backdice(5)" /></td>
+    </tr>
+    <tr>
+      <td style="padding: 30px;">dice</td>
+      <td class="setdice2"><input type="button" class="dice" id="dice1" style="display: none;" onclick="dice(1)" />
+      </td>
+      <td class="setdice2"><input type="button" class="dice" id="dice2" style="display: none;" onclick="dice(2)" />
+      </td>
+      <td class="setdice2"><input type="button" class="dice" id="dice3" style="display: none;" onclick="dice(3)" />
+      </td>
+      <td class="setdice2"><input type="button" class="dice" id="dice4" style="display: none;" onclick="dice(4)" />
+      </td>
+      <td class="setdice2"><input type="button" class="dice" id="dice5" style="display: none;" onclick="dice(5)" />
+      </td>
+    </tr>
+  </table>
+
+  <br /><br />
+  <input type="button" id="start" value="주사위 굴리기" onclick="start()" />
+  <br /><br />
+  <div style="color: gray;">족보가 맞는데도 안나올경우 확정버튼을 눌러주세요<br />※주의 확정버튼을 누를경우 기회가 0으로 됩니다.</div>
+  <br />
+  <input type="button" id="confirmation" value="확정" onclick="number(0)" style="display: none;" />
+  <div id="imgclose"
+    style="width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); position: fixed; left: 0%; top: 0%; display: none;">
+  </div>
+  <div id="img"
+    style="display: none; width: 70%; height: 90%; background-color: snow; position: fixed; top: 5%; left: 13%;">
+    <img
+      src="https://cafeptthumb-phinf.pstatic.net/MjAyMDA4MDdfMTE4/MDAxNTk2Nzc3NDE4Nzc0.y4opooXVfHjDIiQo0b-YFnSab6GK3sSgitcSobXx2m0g.rQGTbxN9JCW7IQUUEjhAsr8XaN5i5a-IAizTIx3AnKwg.PNG/%EC%95%BC%EC%B6%94_%EC%84%A4%EB%AA%85.PNG?type=w1600"
+      style="width: 100%; height: 100%;" alt="야추 설명">
+    <a href="https://namu.wiki/w/%EC%9A%94%ED%8A%B8(%EA%B2%8C%EC%9E%84)?from=Yacht%20Dice"
+      style="color: white; background-color: rgba(0, 0, 0, 1);">출처
+      https://namu.wiki/w/%EC%9A%94%ED%8A%B8(%EA%B2%8C%EC%9E%84)?from=Yacht%20Dice</a>
+  </div>
+
+  <br />
+
+  <input type="button" style="background-color: white; width: 100px; border: 1px solid black; border-radius: 10px;"
+    value="룰 설명" id="imgbutton">
+  <script src="./yacht_js.js"></script>
+</body>
+
+</html>
